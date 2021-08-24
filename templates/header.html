@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+ <style>
+     .image_icon {
+        background: url("{{ url_for('static',filename='image/power.svg') }}");
+		background-size: cover;
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+		margin-right:5px;
+		margin-top:3px;
+		float:left
+    }
+	.text_image {
+		background-size: cover;
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+    }
+	
+	
+  </style>
+
+<head>
+   <meta charset="utf-8">
+   <title>Python Flask Programming</title>
+   <meta name="viewpoint" content="width=device-width,initial-scal=1">
+   <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
+   <!-- <link rel="stylesheet" href="S:/python/flask/static/css/bootstrap.min.css"> -->
+   <link rel="icon" href="{{ url_for('static',filename='watch.svg') }}">
+   
+</head>
+      
+   <header>
+   
+	<div class="navbar-header" style="background-color:#003F72;max-width:100%; margin-top:0px;">
+      
+	  <a class="navbar-brand" href="/">
+	  <img style="max-width:120px; margin-top:0px;" src="{{ url_for('static',filename='image/python_logo.png') }}">
+	  </a>
+	  
+	  <a href="#">
+	  <button type="button" class="btn btn-primary" aria-label="Left Align" style="margin-top: 5px;margin-bottom: 5px; height: 44px;">
+		  <span class="image_icon"></span> 
+		  <span style="text_image">WELCOME TO DASHBOARD</span>
+	  </button>
+	  </a>
+      
+	</div>
+	
+	<div class="container" style="max-width:100%;">
+	          
+        {% with message = get_flashed_messages() %}
+             {% if message %}    
+   		        {% for m in message %}  
+		          <div class="alert alert-info alert-dismissible" style="max-width:30%;">  	
+                     <button type="button" class="close" data-dismiss="alert" >
+		                <span>&times;</span></button>
+						{{ m }} 
+	              </div>
+                {% endfor %}  				
+		     {% endif %}	 
+	    {% endwith %}         
+
+	
+    {%block sidebar%}{% endblock %}
+	
+	</div>
+	
+	<div class="navbar fixed-bottom" style="background-color:#003F72;max-width:100%; margin-bottom:0px;">
+      
+	  <img style="max-width:120px;" src="{{ url_for('static',filename='image/python_logo.png') }}">
+
+	</div>
+	
+	
+
+	
+</header>
+
+<body>
+
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+	
+</body>
+
+   
+
+</html>
+
+
+
