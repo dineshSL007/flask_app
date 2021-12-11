@@ -5,6 +5,8 @@ app = Flask(__name__)
 
 app.secret_key = 'super secret key'
 
+application = app
+
 
 @app.route("/")
 def homepage():
